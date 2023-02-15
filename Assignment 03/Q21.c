@@ -2,6 +2,8 @@
 
 int main() {
     int n, i, j, count, isPrime;
+    printf("C Program to calculate the first 5 Prime numbers of the entered number \n");
+    printf("----------------------------------------------- \n");
 
     printf("Enter a number: ");
     scanf("%d", &n);
