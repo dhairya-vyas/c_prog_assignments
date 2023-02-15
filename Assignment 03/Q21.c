@@ -1,29 +1,31 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
+    int n, i, j, count, isPrime;
 
-    printf("C Program to check if the given number is a Prime Number \n");
-    printf("--------------------------------------------------------- \n");
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    int n,i,flag=0;
-    printf("Enter the Number: ");
-    scanf("%d",&n);
+    count = 0;
+    i = n + 1;
 
-    if(n==0 || n==1){
-        flag = 1;
+    while (count < 5) {
+        isPrime = 1;
+
+        for (j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            printf("%d ", i);
+            count++;
+        }
+
+        i++;
     }
-    for(i=2;i<=n/2;++i)
-    {
-        if(n % i == 0)
-        flag=1;
-        break;
-    }
 
-    if(flag==0){
-        printf("The number %d is a prime number",n);
-    }
-    else{
-    printf("The number is %d NOT a prime number",n);
-    }
     return 0;
 }
